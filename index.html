@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="quiz-container">
+            <h1>Quiz Game</h1>
+            <p style="text-align: center; margin-bottom: 30px;">Test your knowledge with our interactive quiz!</p>
+            
+            <h2>Select a Category</h2>
+            <p style="text-align: center; margin-bottom: 20px;">Or play with questions from all categories</p>
+            
+            <div class="category-selection">
+                <div class="category-card" data-category="general">
+                    <h3>General Knowledge</h3>
+                    <p>Test your knowledge on various topics</p>
+                </div>
+                <div class="category-card" data-category="science">
+                    <h3>Science</h3>
+                    <p>Questions about physics, chemistry, and biology</p>
+                </div>
+                <div class="category-card" data-category="history">
+                    <h3>History</h3>
+                    <p>Questions about world history and important events</p>
+                </div>
+                <div class="category-card" data-category="geography">
+                    <h3>Geography</h3>
+                    <p>Test your knowledge of countries, capitals, and landmarks</p>
+                </div>
+                <div class="category-card" data-category="all">
+                    <h3>All Categories</h3>
+                    <p>Questions from all available topics</p>
+                </div>
+            </div>
+            
+            <button id="start-quiz" class="btn btn-primary" style="margin-top: 30px; width: 100%;">Start Quiz</button>
+        </div>
+        
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="quiz-container hidden">
+            <div class="quiz-header">
+                <div>Question <span id="question-number">1</span> of <span id="total-questions">3</span></div>
+                <div>Score: <span id="current-score">0</span></div>
+                <div class="timer">Time: <span id="time-left">30</span>s</div>
+            </div>
+            
+            <div class="question-category" id="question-category" style="font-weight: bold; margin-bottom: 10px; text-transform: capitalize;"></div>
+            
+            <div class="question" id="question-text">What is the chemical symbol for gold?</div>
+            
+            <div class="options" id="options-container">
+                <!-- Options will be inserted here by JavaScript -->
+            </div>
+            
+            <div class="quiz-controls">
+                <button id="restart-quiz" class="btn btn-secondary">Restart</button>
+                <button id="submit-answer" class="btn btn-primary">Submit Answer</button>
+            </div>
+        </div>
+        
+        <!-- Results Screen -->
+        <div id="results-screen" class="quiz-container hidden">
+            <h1>Quiz Results</h1>
+            <p style="text-align: center; margin-bottom: 20px;">See how well you did!</p>
+            
+            <div class="results-tabs" style="display: flex; justify-content: center; margin-bottom: 30px; border-bottom: 1px solid #ddd;">
+                <button id="summary-tab" class="btn" style="border-radius: 0; border-bottom: 2px solid #3498db;">Summary</button>
+                <button id="review-tab" class="btn" style="border-radius: 0; border-bottom: 1px solid #ddd;">Review Answers</button>
+            </div>
+            
+            <!-- Summary View -->
+            <div id="summary-view">
+                <div class="score" id="final-score">33%</div>
+                <div style="font-size: 1.2rem; margin-bottom: 30px;">
+                    <span id="correct-count">1</span> / <span id="total-questions-summary">3</span> correct
+                </div>
+                <p style="font-size: 1.1rem; margin-bottom: 30px;">Keep practicing! You'll get better!</p>
+                
+                <div class="score-summary">
+                    <div class="correct">Correct Answers: <span id="correct-answers">1</span></div>
+                    <div class="incorrect">Incorrect Answers: <span id="incorrect-answers">2</span></div>
+                </div>
+            </div>
+            
+            <!-- Review View -->
+            <div id="review-view" class="hidden">
+                <div class="review-container" id="review-answers-container">
+                    <!-- Review items will be inserted here by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="result-actions">
+                <button id="play-again" class="btn btn-primary">Play Again</button>
+                <button id="share-results" class="btn">Share Results</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
